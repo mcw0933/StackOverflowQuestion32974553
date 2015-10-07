@@ -8,3 +8,5 @@ A button in the first tab will trigger a web query that populates the second tab
 In order to catch the completion of any load, code executes during Workbook.Open to set a global instance of a class module that handles QueryTable_AfterRefresh events.
 
 Source code for the workbook is in two VBA files in the src folder.
+
+An earlier version of this demo that was incomplete lives in [the v1 branch](https://github.com/mcw0933/StackOverflowQuestion32974553/tree/v1).
