@@ -1,27 +1,9 @@
 Attribute VB_Name = "Module1"
-Sub FetchDataWithHookup()
-    On Error Resume Next
+Sub FetchData()
+    Dim s As Worksheet
+    Set s = Sheets("Data")
     
-    DoFetch True
-End Sub
-
-Sub FetchDataWithoutHookup()
-    On Error Resume Next
-    
-    DoFetch False
-End Sub
-
-Sub DoFetch(withHookup As Boolean)
-    Dim qt As QueryTable
-    Set qt = Sheets("Data").QueryTables(1)
-    
-    If (withHookup) Then
-        Dim c As Class1
-        Set c = New Class1
-        c.HookUpQueryTable qt
-    End If
-    
-    qt.Refresh
+    s.QueryTables(1).Refresh
         
-    Sheets("Data").Activate
+    s.Activate
 End Sub
